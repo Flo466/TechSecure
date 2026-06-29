@@ -4,7 +4,7 @@
 <section class="section">
     <div class="title-row">
         <h2>NOS FILIALES</h2>
-        <a href="{{ url_for('ajouter_filiale') }}" class="btn">+ AJOUTER UNE FILIALE</a>
+        <a href="{{ url_for('ajouter_filiale') }}" class="btn">+ AJOUTER</a>
     </div>
 
     <div
@@ -12,7 +12,6 @@
         <table style="width: 100%; border-collapse: collapse;">
             <thead>
                 <tr style="border-bottom: 2px solid var(--bleu-nuit); text-align: left;">
-                    <th style="padding: 12px;">ID</th>
                     <th style="padding: 12px;">VILLE</th>
                     <th style="padding: 12px;">ADRESSE</th>
                     <th style="padding: 12px;">RESPONSABLE</th>
@@ -24,14 +23,25 @@
             <tbody>
                 {% for f in filiales %}
                 <tr style="border-bottom: 1px solid var(--bordure);">
-                    <td style="padding: 12px;">{{ f.id }}</td>
                     <td style="padding: 12px;">{{ f.ville }}</td>
                     <td style="padding: 12px;">{{ f.adresse }}</td>
                     <td style="padding: 12px;">{{ f.responsable }}</td>
                     <td style="padding: 12px;">{{ f.employes }}</td>
                     <td style="padding: 12px;"><code>{{ f.ip_reseau }}</code></td>
-                    <td style="padding: 12px;">
-                        <a href="#">👁️</a> <a href="#">✏️</a> <a href="#">🗑️</a>
+                    <td style="padding: 12px; display: flex; gap: 15px; align-items: center;">
+                        <a href="{{ url_for('editer_filiale', id=f.id) }}"
+                            style="color: #3498db; text-decoration: none;">
+                            <i class="fas fa-edit"></i>
+                        </a>
+
+                        <form action="{{ url_for('supprimer_filiale', id=f.id) }}" method="POST"
+                            onsubmit="return confirm('Supprimer cette filiale ?');" style="margin: 0;">
+                            <button type="submit"
+                                style="background:none; border:none; cursor:pointer; color: #e74c3c; padding: 0;"
+                                title="Supprimer">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
                     </td>
                 </tr>
                 {% endfor %}
