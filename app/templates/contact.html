@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="section">
+    <h2>CONTACTEZ-NOUS</h2>
+    <p class="intro">Une question, un projet ? Écrivez-nous, nous vous répondrons rapidement.</p>
+
+    <div style="display: flex; gap: 30px; align-items: flex-start; max-width: 900px; margin: auto;">
+
+        <form action="{{ url_for('contact') }}" method="POST"
+            style="flex: 2; display: flex; flex-direction: column; gap: 15px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div style="display: flex; flex-direction: column;">
+                    <label for="nom" style="margin-bottom: 5px; font-weight: bold;">Nom</label>
+                    <input type="text" id="nom" name="nom" placeholder="Votre nom" required
+                        style="padding: 10px; border: 1px solid var(--bordure); border-radius: 6px;">
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                    <label for="prenom" style="margin-bottom: 5px; font-weight: bold;">Prénom</label>
+                    <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required
+                        style="padding: 10px; border: 1px solid var(--bordure); border-radius: 6px;">
+                </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column;">
+                <label for="email" style="margin-bottom: 5px; font-weight: bold;">Email</label>
+                <input type="email" id="email" name="email" placeholder="votre.email@exemple.com" required
+                    style="padding: 10px; border: 1px solid var(--bordure); border-radius: 6px;">
+            </div>
+
+            <div style="display: flex; flex-direction: column;">
+                <label for="telephone" style="margin-bottom: 5px; font-weight: bold;">Téléphone</label>
+                <input type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" required
+                    style="padding: 10px; border: 1px solid var(--bordure); border-radius: 6px;">
+            </div>
+
+            <div style="display: flex; flex-direction: column;">
+                <label for="message" style="margin-bottom: 5px; font-weight: bold;">Message</label>
+                <textarea id="message" name="message" placeholder="Votre message..." rows="5" required
+                    style="padding: 10px; border: 1px solid var(--bordure); border-radius: 6px;"></textarea>
+            </div>
+
+            <button type="submit" class="btn">Envoyer le message</button>
+        </form>
+
+        <div class="service-card"
+            style="flex: 1; background: var(--bleu-nuit); color: white; text-align: left; padding: 30px;">
+            <h3 style="color: white;">NOS COORDONNÉES</h3>
+            <p style="color: #cbd5e1;">📍 TechSecure Solutions<br>123 Avenue de la Défense<br>75000 Paris</p>
+            <p style="color: #cbd5e1;">📞 01 42 00 00 00</p>
+            <p style="color: #cbd5e1;">✉️ contact@techsecure-solutions.com</p>
+            <p style="color: #cbd5e1;">🌐 www.techsecure-solutions.com</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
