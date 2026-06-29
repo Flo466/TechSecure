@@ -5,27 +5,29 @@
     <h2>NOS SERVICES</h2>
     <p class="intro">Découvrez nos domaines d'expertise pour accompagner votre transformation digitale.</p>
 
-    <div class="card four">
+    <div class="card three">
+
         <div class="service-card">
-            <div class="icon">🖥️</div>
-            <h3>ADMINISTRATION SYSTÈMES</h3>
-            <p>Gestion et maintenance des infrastructures systèmes et serveurs.</p>
-        </div>
-        <div class="service-card">
-            <div class="icon">🛡️</div>
+            <img src="{{ url_for('static', filename='IMAGE/cyber.jpg') }}" alt="Cybersécurité"
+                style="width: 100%; height: auto; display: block; margin-bottom: 15px;">
             <h3>CYBERSÉCURITÉ</h3>
             <p>Protection des données et sécurisation de votre système d'information.</p>
         </div>
+
         <div class="service-card">
-            <div class="icon">📊</div>
+            <img src="{{ url_for('static', filename='IMAGE/reseau.png') }}" alt="Réseau"
+                style="width: 100%; height: auto; display: block; margin-bottom: 15px;">
             <h3>SUPERVISION RÉSEAU</h3>
             <p>Surveillance en temps réel de vos réseaux et équipements.</p>
         </div>
+
         <div class="service-card">
-            <div class="icon">☁️</div>
+            <img src="{{ url_for('static', filename='IMAGE/cloud.jpg') }}" alt="Cloud"
+                style="width: 100%; height: auto; display: block; margin-bottom: 15px;">
             <h3>CLOUD COMPUTING</h3>
             <p>Solutions cloud adaptées pour plus de flexibilité et de performance.</p>
         </div>
+
     </div>
 
     <div class="stats">
