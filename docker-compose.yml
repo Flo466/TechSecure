@@ -8,13 +8,13 @@ services:
     volumes:
       - ./app:/app
     environment:
-      - DB_HOST=db_mysql
-      - DB_USER=techuser
-      - DB_PASSWORD=SecretTechPassword2026
-      - DB_NAME=techsecure_db
-      - FLASK_SECRET_KEY=SuperSecretFlaskKey2026
-      - FLASK_APP=app.py
-      - FLASK_DEBUG=1
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - FLASK_SECRET_KEY=${FLASK_SECRET_KEY}
+      - FLASK_APP=${FLASK_APP}
+      - FLASK_DEBUG=${FLASK_DEBUG}
     networks:
       - techsecure_net
     depends_on:
@@ -25,10 +25,10 @@ services:
     container_name: techsecure_db
     restart: always
     environment:
-      - MYSQL_DATABASE=techsecure_db
-      - MYSQL_USER=techuser
-      - MYSQL_PASSWORD=SecretTechPassword2026
-      - MYSQL_ROOT_PASSWORD=RootSecretPassword2026
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     expose:
       - "3306"
     volumes:
