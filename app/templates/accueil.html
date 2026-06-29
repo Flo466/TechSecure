@@ -14,21 +14,25 @@
     <h2>NOS FILIALES</h2>
 
     <div class="card three">
-        <div>
+
+        <div class="card">
             <img src="{{ url_for('static', filename='IMAGE/paris.jpg') }}" alt="Paris">
             <h3>PARIS</h3>
             <p>Siège social</p>
         </div>
-        <div>
+
+        <div class="card">
             <img src="{{ url_for('static', filename='IMAGE/lyon.jpg') }}" alt="Lyon">
             <h3>LYON</h3>
             <p>Agence régionale</p>
         </div>
-        <div>
+
+        <div class="card">
             <img src="{{ url_for('static', filename='IMAGE/marseille.jpg') }}" alt="Marseille">
             <h3>MARSEILLE</h3>
             <p>Agence régionale</p>
         </div>
+
     </div>
 </section>
 {% endblock %}
