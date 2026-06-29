@@ -12,44 +12,73 @@ def get_db_connection():
         host=os.environ.get("DB_HOST", "db_mysql"),
         user=os.environ.get("DB_USER", "techuser"),
         passwd=os.environ.get("DB_PASSWORD", "SecretTechPassword2026"),
-        db=os.environ.get("DB_NAME", "techsecure_db")
+        db=os.environ.get("DB_NAME", "techsecure_db"),
+        charset='utf8mb4'
     )
+
+# ==============================================================================
+# HOME ROUTE
+# ==============================================================================
 
 @app.route("/")
 def accueil():
     """Renders the main landing page."""
     return render_template("accueil.html")
 
+# ==============================================================================
+# ABOUT ROUTE
+# ==============================================================================
+
 @app.route("/apropros")
 def apropros():
     """Renders the About Us page."""
     return render_template("apropros.html")
+
+# ==============================================================================
+# SERVICES ROUTE
+# ==============================================================================
 
 @app.route("/services")
 def services():
     """Renders the corporate IT Services page."""
     return render_template("services.html")
 
+# ==============================================================================
+# BRANCHES (FILIALES) ROUTE
+# ==============================================================================
+
 @app.route("/filiales")
 def filiales():
     """Fetches all subsidiaries from the database and renders the branch dashboard."""
     try:
         db = get_db_connection()
+        db.set_character_set('utf8mb4')
         cursor = db.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SET NAMES utf8mb4;')
+        cursor.execute('SET CHARACTER SET utf8mb4;')
         
-        cursor.execute("SELECT ville, adresse, responsable, employes, ip_reseau FROM filiales;")
+        cursor.execute("SELECT id, ville, adresse, responsable, employes, ip_reseau FROM filiales;")
         liste_filiales = cursor.fetchall()
         
         cursor.close()
         db.close()
         return render_template("filiales.html", filiales=liste_filiales)
     except Exception as e:
-        app.logger.error(f"Database error during branch fetch: {str(e)}")
-        return "Internal Server Error - Unable to load corporate branches.", 500
+        app.logger.error(f"Error fetching branches: {str(e)}")
+        return "Internal Server Error", 500
+
+@app.route("/ajouter_filiale")
+def ajouter_filiale():
+    """Renders the form to add a new subsidiary."""
+    return render_template("ajouter_filiale.html")
+
+# ==============================================================================
+# CONTACT ROUTE
+# ==============================================================================
 
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
-    """Handles both contact form rendering (GET) and secure submission submission (POST)."""
+    """Handles both contact form rendering (GET) and secure submission (POST)."""
     if request.method == "POST":
         nom = request.form.get("nom")
         prenom = request.form.get("prenom")
@@ -82,6 +111,10 @@ def contact():
         return redirect(url_for("contact"))
         
     return render_template("contact.html")
+
+# ==============================================================================
+# APP EXECUTION
+# ==============================================================================
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

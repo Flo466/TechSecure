@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="section">
+    <div class="title-row">
+        <h2>NOS FILIALES</h2>
+        <a href="{{ url_for('ajouter_filiale') }}" class="btn">+ AJOUTER UNE FILIALE</a>
+    </div>
+
+    <div
+        style="overflow-x: auto; background: white; padding: 20px; border-radius: 10px; border: 1px solid var(--bordure);">
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="border-bottom: 2px solid var(--bleu-nuit); text-align: left;">
+                    <th style="padding: 12px;">ID</th>
+                    <th style="padding: 12px;">VILLE</th>
+                    <th style="padding: 12px;">ADRESSE</th>
+                    <th style="padding: 12px;">RESPONSABLE</th>
+                    <th style="padding: 12px;">EMPLOYÉS</th>
+                    <th style="padding: 12px;">IP ROUTEUR</th>
+                    <th style="padding: 12px;">ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for f in filiales %}
+                <tr style="border-bottom: 1px solid var(--bordure);">
+                    <td style="padding: 12px;">{{ f.id }}</td>
+                    <td style="padding: 12px;">{{ f.ville }}</td>
+                    <td style="padding: 12px;">{{ f.adresse }}</td>
+                    <td style="padding: 12px;">{{ f.responsable }}</td>
+                    <td style="padding: 12px;">{{ f.employes }}</td>
+                    <td style="padding: 12px;"><code>{{ f.ip_reseau }}</code></td>
+                    <td style="padding: 12px;">
+                        <a href="#">👁️</a> <a href="#">✏️</a> <a href="#">🗑️</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

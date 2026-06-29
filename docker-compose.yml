@@ -5,6 +5,8 @@ services:
     restart: always
     ports:
       - "5000:5000"
+    volumes:
+      - ./app:/app
     environment:
       - DB_HOST=db_mysql
       - DB_USER=techuser
@@ -12,7 +14,7 @@ services:
       - DB_NAME=techsecure_db
       - FLASK_SECRET_KEY=SuperSecretFlaskKey2026
       - FLASK_APP=app.py
-      - FLASK_ENV=development
+      - FLASK_DEBUG=1
     networks:
       - techsecure_net
     depends_on:
