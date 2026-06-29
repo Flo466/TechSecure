@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="section">
+    <h2>À PROPOS DE NOUS</h2>
+
+    <div style="display: flex; gap: 40px; align-items: center; margin-bottom: 60px;">
+        <img src="{{ url_for('static', filename='IMAGE/1.png') }}" alt="Équipe TechSecure"
+            style="width: 450px; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,.1);">
+        <div style="flex: 1;">
+            <p style="font-size: 18px; line-height: 1.6; color: #475569;">
+                <strong>TechSecure Solutions</strong> est une entreprise spécialisée dans les solutions informatiques et
+                la cybersécurité.
+            </p>
+            <p style="font-size: 18px; line-height: 1.6; color: #475569;">
+                Notre mission est d'accompagner les entreprises dans leur transformation digitale en leur offrant des
+                services fiables, sécurisés et innovants.
+            </p>
+        </div>
+    </div>
+
+    <div class="card four">
+        <div class="service-card">
+            <div class="icon">🛡️</div>
+            <h3>SÉCURITÉ</h3>
+            <p>La sécurité est au cœur de nos préoccupations.</p>
+        </div>
+        <div class="service-card">
+            <div class="icon">💡</div>
+            <h3>INNOVATION</h3>
+            <p>Nous innovons pour vous apporter les meilleures solutions.</p>
+        </div>
+        <div class="service-card">
+            <div class="icon">🤝</div>
+            <h3>CONFIANCE</h3>
+            <p>Nous construisons des relations durables avec nos clients.</p>
+        </div>
+        <div class="service-card">
+            <div class="icon">🎯</div>
+            <h3>ENGAGEMENT</h3>
+            <p>Nous nous engageons pour votre réussite.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
