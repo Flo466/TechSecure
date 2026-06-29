@@ -29,10 +29,10 @@ def accueil():
 # ABOUT ROUTE
 # ==============================================================================
 
-@app.route("/apropros")
-def apropros():
+@app.route("/apropos")
+def apropos():
     """Renders the About Us page."""
-    return render_template("apropros.html")
+    return render_template("apropos.html")
 
 # ==============================================================================
 # SERVICES ROUTE
