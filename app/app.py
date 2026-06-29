@@ -1,11 +1,13 @@
 import os
-from flask import Flask
+from flask import Flask, render_template, request, redirect, url_for, flash
 import MySQLdb
 
 app = Flask(__name__)
-app.secret_key = os.environ.get("FLASK_SECRET_KEY", "fallback-key-dev")
+# Secure session signing key from compose environment
+app.secret_key = os.environ.get("FLASK_SECRET_KEY", "SuperSecretFlaskKey2026")
 
 def get_db_connection():
+    """Establishes a connection to the backend MySQL database using restricted credentials."""
     return MySQLdb.connect(
         host=os.environ.get("DB_HOST", "db_mysql"),
         user=os.environ.get("DB_USER", "techuser"),
@@ -14,17 +16,72 @@ def get_db_connection():
     )
 
 @app.route("/")
-def index():
+def accueil():
+    """Renders the main landing page."""
+    return render_template("accueil.html")
+
+@app.route("/apropros")
+def apropros():
+    """Renders the About Us page."""
+    return render_template("apropros.html")
+
+@app.route("/services")
+def services():
+    """Renders the corporate IT Services page."""
+    return render_template("services.html")
+
+@app.route("/filiales")
+def filiales():
+    """Fetches all subsidiaries from the database and renders the branch dashboard."""
     try:
         db = get_db_connection()
-        cursor = db.cursor()
-        cursor.execute("SELECT VERSION();")
-        version = cursor.fetchone()
+        cursor = db.cursor(MySQLdb.cursors.DictCursor)
+        
+        cursor.execute("SELECT ville, adresse, responsable, employes, ip_reseau FROM filiales;")
+        liste_filiales = cursor.fetchall()
+        
         cursor.close()
         db.close()
-        return f"<h1>TechSecure App</h1><p>Connexion réussie à MySQL ! Version du serveur : {version[0]}</p>"
+        return render_template("filiales.html", filiales=liste_filiales)
     except Exception as e:
-        return f"<h1>TechSecure App</h1><p>Erreur de connexion à la base : {str(e)}</p>"
+        app.logger.error(f"Database error during branch fetch: {str(e)}")
+        return "Internal Server Error - Unable to load corporate branches.", 500
+
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    """Handles both contact form rendering (GET) and secure submission submission (POST)."""
+    if request.method == "POST":
+        nom = request.form.get("nom")
+        prenom = request.form.get("prenom")
+        email = request.form.get("email")
+        telephone = request.form.get("telephone")
+        message = request.form.get("message")
+
+        if not all([nom, prenom, email, telephone, message]):
+            flash("All fields are required.", "error")
+            return redirect(url_for("contact"))
+
+        try:
+            db = get_db_connection()
+            cursor = db.cursor()
+            
+            query = """
+                INSERT INTO contacts (nom, prenom, email, telephone, message) 
+                VALUES (%s, %s, %s, %s, %s);
+            """
+            cursor.execute(query, (nom, prenom, email, telephone, message))
+            db.commit()
+            cursor.close()
+            db.close()
+            
+            flash("Your message has been securely transmitted. Thank you.", "success")
+        except Exception as e:
+            app.logger.error(f"Database error during contact submission: {str(e)}")
+            flash("An error occurred while processing your request. Please try again later.", "error")
+        
+        return redirect(url_for("contact"))
+        
+    return render_template("contact.html")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
