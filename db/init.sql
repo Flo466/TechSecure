@@ -24,8 +24,8 @@ CREATE TABLE IF NOT EXISTS contacts (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO filiales (ville, adresse, responsable, employes, ip_reseau) VALUES
-('Paris', '102 Avenue de la République, 75011 Paris', 'Jean Dupont', 80, '10.10.1.0/24'),
-('Lyon', '15 Rue de la Bannière, 69003 Lyon', 'Sophie Martin', 45, '10.20.1.0/24'),
+('Paris', '102 Avenue de la Republique, 75011 Paris', 'Jean Dupont', 80, '10.10.1.0/24'),
+('Lyon', '15 Rue de la Banniere, 69003 Lyon', 'Sophie Martin', 45, '10.20.1.0/24'),
 ('Marseille', '45 Boulevard du Prado, 13006 Marseille', 'Marc Bouvier', 30, '10.30.1.0/24');
 
 GRANT SELECT, INSERT ON techsecure_db.* TO 'techuser'@'%';
