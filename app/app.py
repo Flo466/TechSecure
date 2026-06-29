@@ -1,18 +1,20 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for, flash
 import MySQLdb
+from flask import Flask, render_template, request, redirect, url_for, flash
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
-# Secure session signing key from compose environment
-app.secret_key = os.environ.get("FLASK_SECRET_KEY", "SuperSecretFlaskKey2026")
+
+app.secret_key = os.environ["FLASK_SECRET_KEY"]
 
 def get_db_connection():
-    """Establishes a connection to the backend MySQL database using restricted credentials."""
+    """Establishes a connection to the backend MySQL database using environment variables."""
     return MySQLdb.connect(
-        host=os.environ.get("DB_HOST", "db_mysql"),
-        user=os.environ.get("DB_USER", "techuser"),
-        passwd=os.environ.get("DB_PASSWORD", "SecretTechPassword2026"),
-        db=os.environ.get("DB_NAME", "techsecure_db"),
+        host=os.environ["DB_HOST"],
+        user=os.environ["DB_USER"],
+        passwd=os.environ["DB_PASSWORD"],
+        db=os.environ["DB_NAME"],
         charset='utf8mb4'
     )
 
