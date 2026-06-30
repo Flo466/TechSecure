@@ -1,88 +1,88 @@
-# TechSecure - Gestion Sécurisée des Filiales
+# TechSecure - Secure Subsidiary Management
 
-Une application de gestion (CRUD) conteneurisée, conçue pour assurer la gestion centralisée des filiales d'une entreprise. Ce projet met l'accent sur la **sécurisation de l'infrastructure** et la **segmentation réseau**, dans le cadre d'un déploiement professionnel (AIS).
+A containerized management (CRUD) application designed to provide centralized management of a company's subsidiaries. This project focuses on **infrastructure security** and **network segmentation**, as part of a professional deployment (AIS).
 
 ## ✨ Features
 
-* **Gestion des Filiales :** Création, lecture, mise à jour et suppression (CRUD) via une interface web.
-* **Architecture Sécurisée :** Segmentation réseau stricte avec isolation de la base de données.
-* **Gestion des Secrets :** Injection des variables d'environnement via `.env` (hors versionnage Git).
-* **Déploiement Conteneurisé :** Infrastructure complète (Flask, MySQL, Adminer) orchestrée par Docker Compose.
+* **Subsidiary Management:** Create, read, update, and delete (CRUD) operations via a web interface.
+* **Secure Architecture:** Strict network segmentation with database isolation.
+* **Secrets Management:** Environment variables injected via `.env` (excluded from Git versioning).
+* **Containerized Deployment:** Full infrastructure (Flask, MySQL, Adminer) orchestrated with Docker Compose.
 
 ## 🛠️ Tech Stack
 
-* **Backend :** Python 3, Flask
-* **Database :** MySQL 8.0
-* **Frontend :** HTML5, CSS (Responsive)
-* **Infrastructure :** Docker, Docker Compose
-* **Admin :** Adminer (Gestion DB)
+* **Backend:** Python 3, Flask
+* **Database:** MySQL 8.0
+* **Frontend:** HTML5, CSS (Responsive)
+* **Infrastructure:** Docker, Docker Compose
+* **Admin:** Adminer (DB Management)
 
 ## 🚀 Getting Started
 
-### Prérequis
+### Prerequisites
 
-Vous devez avoir [Docker](https://docs.docker.com/get-docker/) et [Docker Compose](https://docs.docker.com/compose/install/) installés sur votre machine.
+You need [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/) installed on your machine.
 
-### Installation & Déploiement
+### Installation & Deployment
 
-1. **Cloner le projet ou se rendre dans le répertoire :**
+1. **Clone the project or navigate to the directory:**
 
    ```bash
    cd TechSecure
    ```
 
-2. **Configuration de l'environnement :**
+2. **Environment configuration:**
 
-   Créez un fichier `.env` à la racine du projet et ajoutez les variables suivantes, il ne faut d'ailleurs jamais commiter ce fichier :
+   Create a `.env` file at the root of the project and add the following variables. This file must never be committed:
 
    ```env
    DB_HOST=db_mysql
    DB_USER=techuser
-   DB_PASSWORD=<VOTRE_MOT_DE_PASSE_SECURISE>
+   DB_PASSWORD=<YOUR_SECURE_PASSWORD>
    DB_NAME=techsecure_db
-   MYSQL_ROOT_PASSWORD=<VOTRE_MOT_DE_PASSE_ROOT>
-   FLASK_SECRET_KEY=<CLE_ALEATOIRE_GENEREE>
+   MYSQL_ROOT_PASSWORD=<YOUR_ROOT_PASSWORD>
+   FLASK_SECRET_KEY=<RANDOM_GENERATED_KEY>
    FLASK_APP=app.py
    FLASK_DEBUG=1
    ```
 
-3. **Build et lancement des conteneurs :**
+3. **Build and start the containers:**
 
    ```bash
    docker compose up -d --build
    ```
 
-## 🌐 Accès aux services
+## 🌐 Accessing the Services
 
-Une fois les conteneurs démarrés, les services sont accessibles via le navigateur :
+Once the containers are running, the services are accessible via the browser:
 
-* **Application Web :** http://localhost:5000
-* **Gestion Base de Données (Adminer) :** http://localhost:8082
-  * Système : MySQL
-  * Serveur : db_mysql
-  * Utilisateur : techuser
-  * Mot de passe : Celui défini dans `DB_PASSWORD` dans le `.env`
+* **Web Application:** http://localhost:5000
+* **Database Management (Adminer):** http://localhost:8082
+  * System: MySQL
+  * Server: db_mysql
+  * Username: techuser
+  * Password: The one set in `DB_PASSWORD` in the `.env` file
 
-## 🛡️ Sécurisation avec Docker Compose
+## 🛡️ Security with Docker Compose
 
-L'architecture est pensée pour limiter au maximum la surface d'attaque :
+The architecture is designed to minimize the attack surface as much as possible:
 
-* **Isolation Réseau :** Utilisation de deux réseaux Docker. Le réseau `backend_net` est déclaré avec `internal: true`. La base de données est totalement isolée, elle ne peut pas communiquer avec internet ni être accédée directement depuis l'hôte.
-* **Moindre privilège :** Seuls les conteneurs `flask_app` et `adminer` sont connectés au `backend_net` et peuvent interagir avec la base de données.
-* **Exposition limitée :** Seuls les ports `5000` pour l'Application et `8082` pour Adminer sont mappés sur l'hôte. Le port de la base de données `3306` n'est jamais exposé à l'extérieur du réseau Docker.
+* **Network Isolation:** Use of two Docker networks. The `backend_net` network is declared with `internal: true`. The database is fully isolated, it cannot communicate with the internet nor be accessed directly from the host.
+* **Least Privilege:** Only the `flask_app` and `adminer` containers are connected to `backend_net` and can interact with the database.
+* **Limited Exposure:** Only ports `5000` (Application) and `8082` (Adminer) are mapped to the host. The database port `3306` is never exposed outside the Docker network.
 
-## 📁 Structure du Projet
+## 📁 Project Structure
 
 ```
 TechSecure/
-├── app/               # Code source Flask
-│   ├── app.py         # Application principale et routes
-│   └── Dockerfile     # Instructions de build pour l'image Flask
+├── app/               # Flask source code
+│   ├── app.py         # Main application and routes
+│   └── Dockerfile     # Build instructions for the Flask image
 ├── db/
-│   └── init.sql       # Script d'initialisation SQL (schéma de base)
+│   └── init.sql       # SQL initialization script (database schema)
 ├── static/            # Assets (CSS, images)
-├── templates/         # Templates HTML (base, vue filiales, formulaires)
-├── .env               # Configuration des secrets (exclu de Git)
-├── .gitignore         # Fichiers et dossiers à ignorer (ex: .env, __pycache__)
-└── docker-compose.yml # Orchestration des services et des réseaux
+├── templates/         # HTML templates (base, subsidiary view, forms)
+├── .env               # Secrets configuration (excluded from Git)
+├── .gitignore         # Files and folders to ignore (e.g. .env, __pycache__)
+└── docker-compose.yml # Service and network orchestration
 ```
