@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Hero Spécifique Cloud Computing -->
+<div class="hero hero-cloud">
+    <div class="hero-text">
+        <h1>Cloud Computing</h1>
+        <p>Architectures cloud flexibles, scalables et sécurisées pour propulser votre entreprise.</p>
+        <a href="{{ url_for('contact') }}" class="btn">Discuter de votre projet</a>
+    </div>
+</div>
+
+<section class="section">
+    <h2>NOS SOLUTIONS CLOUD</h2>
+    <p class="intro">Une gamme complète de services cloud adaptés à tous vos besoins, du stockage à l'infrastructure
+        complète.</p>
+
+    <div class="card three">
+
+        <div class="service-card">
+            <div class="icon">☁️</div>
+            <h3>Infrastructure as a Service (IaaS)</h3>
+            <p>Serveurs virtuels, stockage et réseaux à la demande pour déployer votre infrastructure en toute
+                flexibilité.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">⚙️</div>
+            <h3>Platform as a Service (PaaS)</h3>
+            <p>Plateformes de développement prêtes à l'emploi pour accélérer le déploiement de vos applications.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">📦</div>
+            <h3>Software as a Service (SaaS)</h3>
+            <p>Applications métiers accessibles partout, sans installation, avec mise à jour automatique incluse.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section section-alt">
+    <h2>NOS SERVICES CLOUD</h2>
+
+    <div class="detail-list">
+
+        <div class="detail-item">
+            <div class="icon">🔄</div>
+            <div class="detail-item-text">
+                <h3>Migration vers le Cloud</h3>
+                <p>Accompagnement complet pour migrer vos applications et données
+                    vers le cloud, avec une stratégie de transition sans interruption de service.</p>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <div class="icon">🔧</div>
+            <div class="detail-item-text">
+                <h3>Architecture Cloud Hybride</h3>
+                <p>Conception d'infrastructures hybrides combinant cloud public et
+                    privé pour allier flexibilité et contrôle.</p>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <div class="icon">📦</div>
+            <div class="detail-item-text">
+                <h3>Conteneurisation & Orchestration</h3>
+                <p>Déploiement et gestion de conteneurs avec Docker et Kubernetes
+                    pour une scalabilité et une portabilité accrues.</p>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <div class="icon">💾</div>
+            <div class="detail-item-text">
+                <h3>Sauvegarde & Disaster Recovery</h3>
+                <p>Plans de reprise d'activité (PRA) et sauvegardes automatisées pour
+                    garantir la continuité de votre activité.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <h2>AVANTAGES DU CLOUD AVEC TECHSECURE</h2>
+
+    <div class="card three">
+
+        <div class="service-card">
+            <div class="icon">💰</div>
+            <h3>Optimisation des Coûts</h3>
+            <p>Modèle de facturation à l'usage pour ne payer que ce que vous consommez, sans investissement initial
+                lourd.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">📈</div>
+            <h3>Scalabilité Illimitée</h3>
+            <p>Adaptez instantanément vos ressources à la demande : plus de limite, plus de goulot d'étranglement.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">🌍</div>
+            <h3>Mobilité Totale</h3>
+            <p>Accédez à vos données et applications depuis n'importe où, n'importe quand, sur n'importe quel appareil.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <h2>PLATEFORMES PARTENAIRES</h2>
+    <p class="intro">Nous travaillons avec les leaders mondiaux du cloud pour vous offrir les meilleures solutions.</p>
+
+    <div class="partner-grid">
+        <div class="service-card">
+            <div class="icon partner-aws">☁️</div>
+            <h3>AWS</h3>
+            <p>Amazon Web Services</p>
+        </div>
+        <div class="service-card">
+            <div class="icon partner-azure">☁️</div>
+            <h3>AZURE</h3>
+            <p>Microsoft Azure</p>
+        </div>
+        <div class="service-card">
+            <div class="icon partner-gcp">☁️</div>
+            <h3>GCP</h3>
+            <p>Google Cloud Platform</p>
+        </div>
+        <div class="service-card">
+            <div class="icon partner-ovh">☁️</div>
+            <h3>OVHcloud</h3>
+            <p>Cloud Français</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="stats">
+        <div>
+            <strong>200+</strong>
+            <span>Projets cloud livrés</span>
+        </div>
+        <div>
+            <strong>15 Po</strong>
+            <span>Données hébergées</span>
+        </div>
+        <div>
+            <strong>99.99%</strong>
+            <span>Garantie Uptime SLA</span>
+        </div>
+        <div>
+            <strong>35%</strong>
+            <span>d'économies en moyenne</span>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

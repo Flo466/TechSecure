@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Hero Spécifique Supervision Réseau -->
+<div class="hero hero-reseau">
+    <div class="hero-text">
+        <h1>Supervision Réseau</h1>
+        <p>Gardez un œil en temps réel sur l'ensemble de votre infrastructure réseau.</p>
+        <a href="{{ url_for('contact') }}" class="btn">Demander une démo</a>
+    </div>
+</div>
+
+<section class="section">
+    <h2>NOTRE EXPERTISE RÉSEAU</h2>
+    <p class="intro">Une surveillance proactive pour anticiper et résoudre les incidents avant qu'ils n'impactent votre
+        activité.</p>
+
+    <div class="card three">
+
+        <div class="service-card">
+            <div class="icon">📡</div>
+            <h3>Monitoring Temps Réel</h3>
+            <p>Surveillance continue de la bande passante, de la latence et de la disponibilité de vos équipements
+                réseau.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">⚡</div>
+            <h3>Alerting Intelligent</h3>
+            <p>Notifications instantanées en cas d'anomalie avec escalade automatique vers les équipes concernées.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">📊</div>
+            <h3>Rapports & Tableaux de Bord</h3>
+            <p>Visualisez l'état de votre réseau avec des dashboards personnalisés et des rapports périodiques
+                détaillés.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section section-alt">
+    <h2>NOS OUTILS DE SUPERVISION</h2>
+
+    <div class="detail-list">
+
+        <div class="detail-item">
+            <div class="icon"><i class="fas fa-server"></i></div>
+            <div class="detail-item-text">
+                <h3>NAGIOS / Centreon</h3>
+                <p>Supervision centralisée de l'ensemble de votre parc : serveurs,
+                    commutateurs, routeurs et applications métiers.</p>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <div class="icon"><i class="fas fa-chart-line"></i></div>
+            <div class="detail-item-text">
+                <h3>Grafana & Prometheus</h3>
+                <p>Métriques avancées et visualisation temps réel pour une analyse
+                    fine des performances de votre infrastructure.</p>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <div class="icon"><i class="fas fa-bell"></i></div>
+            <div class="detail-item-text">
+                <h3>Gestion des Incidents</h3>
+                <p>Ticketing intégré, gestion des escalades et procédures
+                    automatisées de résolution pour un MTTR réduit.</p>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <div class="icon"><i class="fas fa-lock"></i></div>
+            <div class="detail-item-text">
+                <h3>Sécurité Réseau</h3>
+                <p>Détection d'intrusion (IDS/IPS), analyse de flux et corrélation
+                    d'événements pour une sécurité réseau optimale.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <h2>POURQUOI CHOISIR NOTRE SUPERVISION ?</h2>
+
+    <div class="card three">
+
+        <div class="service-card">
+            <div class="icon">⏱️</div>
+            <h3>Réactivité 24/7</h3>
+            <p>Une équipe dédiée assure une veille permanente et intervient immédiatement en cas d'incident critique.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">📉</div>
+            <h3>Réduction des Coûts</h3>
+            <p>Anticipez les pannes et optimisez vos ressources grâce à une maintenance prédictive efficace.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">📋</div>
+            <h3>Conformité SLA</h3>
+            <p>Respectez vos engagements de niveau de service avec des indicateurs de performance précis et mesurables.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="stats">
+        <div>
+            <strong>10 000+</strong>
+            <span>Équipements supervisés</span>
+        </div>
+        <div>
+            <strong>&lt; 5 min</strong>
+            <span>Temps de détection</span>
+        </div>
+        <div>
+            <strong>99.99%</strong>
+            <span>Taux de disponibilité</span>
+        </div>
+        <div>
+            <strong>4 000+</strong>
+            <span>Incidents résolus/an</span>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

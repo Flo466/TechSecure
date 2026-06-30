@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Hero Spécifique Cybersécurité -->
+<div class="hero hero-cyber">
+    <div class="hero-text">
+        <h1>Cybersécurité</h1>
+        <p>Protégez votre entreprise contre les menaces numériques avec nos solutions de sécurité avancées.</p>
+        <a href="{{ url_for('contact') }}" class="btn">Demander un audit</a>
+    </div>
+</div>
+
+<section class="section">
+    <h2>NOTRE APPROCHE SÉCURITÉ</h2>
+    <p class="intro">Une stratégie de défense en profondeur pour garantir l'intégrité de vos systèmes.</p>
+
+    <div class="card three">
+
+        <div class="service-card">
+            <div class="icon">🔍</div>
+            <h3>Audit & Diagnostic</h3>
+            <p>Analyse complète de votre infrastructure pour identifier les vulnérabilités et les failles de sécurité.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">🛡️</div>
+            <h3>Protection des Données</h3>
+            <p>Mise en place de solutions de chiffrement, pare-feu et systèmes de détection d'intrusion.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">📋</div>
+            <h3>Conformité RGPD</h3>
+            <p>Accompagnement pour la mise en conformité avec le Règlement Général sur la Protection des Données.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section section-alt">
+    <h2>NOS SOLUTIONS DE SÉCURITÉ</h2>
+
+    <div class="detail-list">
+
+        <div class="detail-item">
+            <div class="icon">🔐</div>
+            <div class="detail-item-text">
+                <h3>Sécurisation des Réseaux</h3>
+                <p>Firewalls nouvelle génération, VPN d'accès distant, segmentation
+                    réseau et filtrage avancé pour une protection périmétrique optimale.</p>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <div class="icon">🦠</div>
+            <div class="detail-item-text">
+                <h3>Antivirus & Antimalware</h3>
+                <p>Déploiement de solutions EDR (Endpoint Detection and Response) et
+                    antivirus nouvelle génération pour protéger vos postes de travail.</p>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <div class="icon">☁️</div>
+            <div class="detail-item-text">
+                <h3>Sécurité Cloud</h3>
+                <p>Protection de vos environnements cloud (AWS, Azure, GCP) avec des
+                    politiques de sécurité adaptées et une surveillance continue.</p>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <div class="icon">🎓</div>
+            <div class="detail-item-text">
+                <h3>Sensibilisation & Formation</h3>
+                <p>Formation de vos équipes aux bonnes pratiques de cybersécurité et
+                    organisation de campagnes de phishing simulé.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="stats">
+        <div>
+            <strong>10 ans</strong>
+            <span>d'expertise cybersécurité</span>
+        </div>
+        <div>
+            <strong>500+</strong>
+            <span>Audits réalisés</span>
+        </div>
+        <div>
+            <strong>99%</strong>
+            <span>des menaces neutralisées</span>
+        </div>
+        <div>
+            <strong>ISO 27001</strong>
+            <span>Certification</span>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
