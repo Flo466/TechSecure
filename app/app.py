@@ -48,6 +48,25 @@ def services():
     return render_template("services.html")
 
 # ==============================================================================
+# SERVICE DETAIL PAGES
+# ==============================================================================
+
+@app.route("/services/cybersecurite")
+def cybersecurite():
+    # Render the cybersecurity detailed page
+    return render_template("cybersecurite.html")
+
+@app.route("/services/supervision-reseau")
+def supervision_reseau():
+    # Render the network supervision detailed page
+    return render_template("supervision_reseau.html")
+
+@app.route("/services/cloud-computing")
+def cloud_computing():
+    # Render the cloud computing detailed page
+    return render_template("cloud_computing.html")
+
+# ==============================================================================
 # BRANCHES (FILIALES) ROUTES
 # ==============================================================================
 
