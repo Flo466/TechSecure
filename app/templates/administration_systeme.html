@@ -3,8 +3,7 @@
 {% block content %}
 
 <!-- Hero Spécifique Administration Système -->
-<div class="hero"
-    style="background: linear-gradient(90deg, rgba(6, 27, 58, .95), rgba(6, 27, 58, .55)), url('/static/IMAGE/AIS.jpg') center/cover;">
+<div class="hero hero-ais">
     <div class="hero-text">
         <h1>Administration Système</h1>
         <p>Gestion complète et sécurisée de vos serveurs, bases de données et infrastructures critiques.</p>
@@ -40,47 +39,43 @@
     </div>
 </section>
 
-<section class="section" style="background: var(--gris); border-radius: 10px; padding: 40px;">
+<section class="section section-alt">
     <h2>NOS SERVICES SYSTÈME</h2>
 
-    <div style="display: flex; flex-direction: column; gap: 25px; max-width: 900px; margin: auto;">
+    <div class="detail-list">
 
-        <div
-            style="display: flex; gap: 20px; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
-            <div class="icon" style="min-width: 68px;">🔧</div>
-            <div>
-                <h3 style="margin: 0 0 5px; color: var(--bleu-nuit);">Déploiement & Provisionnement</h3>
-                <p style="margin: 0; color: #475569;">Mise en place d'infrastructures complètes avec des outils comme
+        <div class="detail-item">
+            <div class="icon">🔧</div>
+            <div class="detail-item-text">
+                <h3>Déploiement & Provisionnement</h3>
+                <p>Mise en place d'infrastructures complètes avec des outils comme
                     Terraform, Ansible et Docker pour un déploiement reproductible et fiable.</p>
             </div>
         </div>
 
-        <div
-            style="display: flex; gap: 20px; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
-            <div class="icon" style="min-width: 68px;">📦</div>
-            <div>
-                <h3 style="margin: 0 0 5px; color: var(--bleu-nuit);">Conteneurisation & Virtualisation</h3>
-                <p style="margin: 0; color: #475569;">Gestion de parcs de machines virtuelles (VMware, Proxmox) et de
+        <div class="detail-item">
+            <div class="icon">📦</div>
+            <div class="detail-item-text">
+                <h3>Conteneurisation & Virtualisation</h3>
+                <p>Gestion de parcs de machines virtuelles (VMware, Proxmox) et de
                     conteneurs (Docker, Kubernetes) pour optimiser vos ressources.</p>
             </div>
         </div>
 
-        <div
-            style="display: flex; gap: 20px; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
-            <div class="icon" style="min-width: 68px;">💾</div>
-            <div>
-                <h3 style="margin: 0 0 5px; color: var(--bleu-nuit);">Sauvegarde & Restauration</h3>
-                <p style="margin: 0; color: #475569;">Mise en place de stratégies de backup (règle 3-2-1), sauvegardes
+        <div class="detail-item">
+            <div class="icon">💾</div>
+            <div class="detail-item-text">
+                <h3>Sauvegarde & Restauration</h3>
+                <p>Mise en place de stratégies de backup (règle 3-2-1), sauvegardes
                     automatisées et tests de restauration réguliers.</p>
             </div>
         </div>
 
-        <div
-            style="display: flex; gap: 20px; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
-            <div class="icon" style="min-width: 68px;">📊</div>
-            <div>
-                <h3 style="margin: 0 0 5px; color: var(--bleu-nuit);">Monitoring & Performance</h3>
-                <p style="margin: 0; color: #475569;">Supervision des ressources systèmes (CPU, RAM, disque) avec
+        <div class="detail-item">
+            <div class="icon">📊</div>
+            <div class="detail-item-text">
+                <h3>Monitoring & Performance</h3>
+                <p>Supervision des ressources systèmes (CPU, RAM, disque) avec
                     alerting proactif et optimisation continue des performances.</p>
             </div>
         </div>

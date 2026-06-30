@@ -3,8 +3,7 @@
 {% block content %}
 
 <!-- Hero Spécifique Supervision Réseau -->
-<div class="hero"
-    style="background: linear-gradient(90deg, rgba(6, 27, 58, .95), rgba(6, 27, 58, .55)), url('/static/IMAGE/reseau.jpg') center/cover;">
+<div class="hero hero-reseau">
     <div class="hero-text">
         <h1>Supervision Réseau</h1>
         <p>Gardez un œil en temps réel sur l'ensemble de votre infrastructure réseau.</p>
@@ -42,47 +41,43 @@
     </div>
 </section>
 
-<section class="section" style="background: var(--gris); border-radius: 10px; padding: 40px;">
+<section class="section section-alt">
     <h2>NOS OUTILS DE SUPERVISION</h2>
 
-    <div style="display: flex; flex-direction: column; gap: 25px; max-width: 900px; margin: auto;">
+    <div class="detail-list">
 
-        <div
-            style="display: flex; gap: 20px; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
-            <div class="icon" style="min-width: 68px;">🖥️</div>
-            <div>
-                <h3 style="margin: 0 0 5px; color: var(--bleu-nuit);">NAGIOS / Centreon</h3>
-                <p style="margin: 0; color: #475569;">Supervision centralisée de l'ensemble de votre parc : serveurs,
+        <div class="detail-item">
+            <div class="icon"><i class="fas fa-server"></i></div>
+            <div class="detail-item-text">
+                <h3>NAGIOS / Centreon</h3>
+                <p>Supervision centralisée de l'ensemble de votre parc : serveurs,
                     commutateurs, routeurs et applications métiers.</p>
             </div>
         </div>
 
-        <div
-            style="display: flex; gap: 20px; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
-            <div class="icon" style="min-width: 68px;">📈</div>
-            <div>
-                <h3 style="margin: 0 0 5px; color: var(--bleu-nuit);">Grafana & Prometheus</h3>
-                <p style="margin: 0; color: #475569;">Métriques avancées et visualisation temps réel pour une analyse
+        <div class="detail-item">
+            <div class="icon"><i class="fas fa-chart-line"></i></div>
+            <div class="detail-item-text">
+                <h3>Grafana & Prometheus</h3>
+                <p>Métriques avancées et visualisation temps réel pour une analyse
                     fine des performances de votre infrastructure.</p>
             </div>
         </div>
 
-        <div
-            style="display: flex; gap: 20px; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
-            <div class="icon" style="min-width: 68px;">🔔</div>
-            <div>
-                <h3 style="margin: 0 0 5px; color: var(--bleu-nuit);">Gestion des Incidents</h3>
-                <p style="margin: 0; color: #475569;">Ticketing intégré, gestion des escalades et procédures
+        <div class="detail-item">
+            <div class="icon"><i class="fas fa-bell"></i></div>
+            <div class="detail-item-text">
+                <h3>Gestion des Incidents</h3>
+                <p>Ticketing intégré, gestion des escalades et procédures
                     automatisées de résolution pour un MTTR réduit.</p>
             </div>
         </div>
 
-        <div
-            style="display: flex; gap: 20px; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
-            <div class="icon" style="min-width: 68px;">🔒</div>
-            <div>
-                <h3 style="margin: 0 0 5px; color: var(--bleu-nuit);">Sécurité Réseau</h3>
-                <p style="margin: 0; color: #475569;">Détection d'intrusion (IDS/IPS), analyse de flux et corrélation
+        <div class="detail-item">
+            <div class="icon"><i class="fas fa-lock"></i></div>
+            <div class="detail-item-text">
+                <h3>Sécurité Réseau</h3>
+                <p>Détection d'intrusion (IDS/IPS), analyse de flux et corrélation
                     d'événements pour une sécurité réseau optimale.</p>
             </div>
         </div>

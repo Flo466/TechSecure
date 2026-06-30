@@ -3,8 +3,7 @@
 {% block content %}
 
 <!-- Hero Spécifique Cybersécurité -->
-<div class="hero"
-    style="background: linear-gradient(90deg, rgba(6, 27, 58, .95), rgba(6, 27, 58, .55)), url('/static/IMAGE/cyber.jpg') center/cover;">
+<div class="hero hero-cyber">
     <div class="hero-text">
         <h1>Cybersécurité</h1>
         <p>Protégez votre entreprise contre les menaces numériques avec nos solutions de sécurité avancées.</p>
@@ -40,47 +39,43 @@
     </div>
 </section>
 
-<section class="section" style="background: var(--gris); border-radius: 10px; padding: 40px;">
+<section class="section section-alt">
     <h2>NOS SOLUTIONS DE SÉCURITÉ</h2>
 
-    <div style="display: flex; flex-direction: column; gap: 25px; max-width: 900px; margin: auto;">
+    <div class="detail-list">
 
-        <div
-            style="display: flex; gap: 20px; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
-            <div class="icon" style="min-width: 68px;">🔐</div>
-            <div>
-                <h3 style="margin: 0 0 5px; color: var(--bleu-nuit);">Sécurisation des Réseaux</h3>
-                <p style="margin: 0; color: #475569;">Firewalls nouvelle génération, VPN d'accès distant, segmentation
+        <div class="detail-item">
+            <div class="icon">🔐</div>
+            <div class="detail-item-text">
+                <h3>Sécurisation des Réseaux</h3>
+                <p>Firewalls nouvelle génération, VPN d'accès distant, segmentation
                     réseau et filtrage avancé pour une protection périmétrique optimale.</p>
             </div>
         </div>
 
-        <div
-            style="display: flex; gap: 20px; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
-            <div class="icon" style="min-width: 68px;">🦠</div>
-            <div>
-                <h3 style="margin: 0 0 5px; color: var(--bleu-nuit);">Antivirus & Antimalware</h3>
-                <p style="margin: 0; color: #475569;">Déploiement de solutions EDR (Endpoint Detection and Response) et
+        <div class="detail-item">
+            <div class="icon">🦠</div>
+            <div class="detail-item-text">
+                <h3>Antivirus & Antimalware</h3>
+                <p>Déploiement de solutions EDR (Endpoint Detection and Response) et
                     antivirus nouvelle génération pour protéger vos postes de travail.</p>
             </div>
         </div>
 
-        <div
-            style="display: flex; gap: 20px; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
-            <div class="icon" style="min-width: 68px;">☁️</div>
-            <div>
-                <h3 style="margin: 0 0 5px; color: var(--bleu-nuit);">Sécurité Cloud</h3>
-                <p style="margin: 0; color: #475569;">Protection de vos environnements cloud (AWS, Azure, GCP) avec des
+        <div class="detail-item">
+            <div class="icon">☁️</div>
+            <div class="detail-item-text">
+                <h3>Sécurité Cloud</h3>
+                <p>Protection de vos environnements cloud (AWS, Azure, GCP) avec des
                     politiques de sécurité adaptées et une surveillance continue.</p>
             </div>
         </div>
 
-        <div
-            style="display: flex; gap: 20px; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
-            <div class="icon" style="min-width: 68px;">🎓</div>
-            <div>
-                <h3 style="margin: 0 0 5px; color: var(--bleu-nuit);">Sensibilisation & Formation</h3>
-                <p style="margin: 0; color: #475569;">Formation de vos équipes aux bonnes pratiques de cybersécurité et
+        <div class="detail-item">
+            <div class="icon">🎓</div>
+            <div class="detail-item-text">
+                <h3>Sensibilisation & Formation</h3>
+                <p>Formation de vos équipes aux bonnes pratiques de cybersécurité et
                     organisation de campagnes de phishing simulé.</p>
             </div>
         </div>

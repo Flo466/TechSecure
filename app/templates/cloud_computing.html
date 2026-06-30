@@ -3,8 +3,7 @@
 {% block content %}
 
 <!-- Hero Spécifique Cloud Computing -->
-<div class="hero"
-    style="background: linear-gradient(90deg, rgba(6, 27, 58, .95), rgba(6, 27, 58, .55)), url('/static/IMAGE/cloud.jpg') center/cover;">
+<div class="hero hero-cloud">
     <div class="hero-text">
         <h1>Cloud Computing</h1>
         <p>Architectures cloud flexibles, scalables et sécurisées pour propulser votre entreprise.</p>
@@ -41,47 +40,43 @@
     </div>
 </section>
 
-<section class="section" style="background: var(--gris); border-radius: 10px; padding: 40px;">
+<section class="section section-alt">
     <h2>NOS SERVICES CLOUD</h2>
 
-    <div style="display: flex; flex-direction: column; gap: 25px; max-width: 900px; margin: auto;">
+    <div class="detail-list">
 
-        <div
-            style="display: flex; gap: 20px; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
-            <div class="icon" style="min-width: 68px;">🔄</div>
-            <div>
-                <h3 style="margin: 0 0 5px; color: var(--bleu-nuit);">Migration vers le Cloud</h3>
-                <p style="margin: 0; color: #475569;">Accompagnement complet pour migrer vos applications et données
+        <div class="detail-item">
+            <div class="icon">🔄</div>
+            <div class="detail-item-text">
+                <h3>Migration vers le Cloud</h3>
+                <p>Accompagnement complet pour migrer vos applications et données
                     vers le cloud, avec une stratégie de transition sans interruption de service.</p>
             </div>
         </div>
 
-        <div
-            style="display: flex; gap: 20px; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
-            <div class="icon" style="min-width: 68px;">🔧</div>
-            <div>
-                <h3 style="margin: 0 0 5px; color: var(--bleu-nuit);">Architecture Cloud Hybride</h3>
-                <p style="margin: 0; color: #475569;">Conception d'infrastructures hybrides combinant cloud public et
+        <div class="detail-item">
+            <div class="icon">🔧</div>
+            <div class="detail-item-text">
+                <h3>Architecture Cloud Hybride</h3>
+                <p>Conception d'infrastructures hybrides combinant cloud public et
                     privé pour allier flexibilité et contrôle.</p>
             </div>
         </div>
 
-        <div
-            style="display: flex; gap: 20px; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
-            <div class="icon" style="min-width: 68px;">📦</div>
-            <div>
-                <h3 style="margin: 0 0 5px; color: var(--bleu-nuit);">Conteneurisation & Orchestration</h3>
-                <p style="margin: 0; color: #475569;">Déploiement et gestion de conteneurs avec Docker et Kubernetes
+        <div class="detail-item">
+            <div class="icon">📦</div>
+            <div class="detail-item-text">
+                <h3>Conteneurisation & Orchestration</h3>
+                <p>Déploiement et gestion de conteneurs avec Docker et Kubernetes
                     pour une scalabilité et une portabilité accrues.</p>
             </div>
         </div>
 
-        <div
-            style="display: flex; gap: 20px; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
-            <div class="icon" style="min-width: 68px;">💾</div>
-            <div>
-                <h3 style="margin: 0 0 5px; color: var(--bleu-nuit);">Sauvegarde & Disaster Recovery</h3>
-                <p style="margin: 0; color: #475569;">Plans de reprise d'activité (PRA) et sauvegardes automatisées pour
+        <div class="detail-item">
+            <div class="icon">💾</div>
+            <div class="detail-item-text">
+                <h3>Sauvegarde & Disaster Recovery</h3>
+                <p>Plans de reprise d'activité (PRA) et sauvegardes automatisées pour
                     garantir la continuité de votre activité.</p>
             </div>
         </div>
@@ -121,24 +116,24 @@
     <h2>PLATEFORMES PARTENAIRES</h2>
     <p class="intro">Nous travaillons avec les leaders mondiaux du cloud pour vous offrir les meilleures solutions.</p>
 
-    <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 30px;">
-        <div class="service-card" style="min-width: 180px;">
-            <div class="icon" style="background: linear-gradient(180deg, #ff9900, #cc7a00);">☁️</div>
+    <div class="partner-grid">
+        <div class="service-card">
+            <div class="icon partner-aws">☁️</div>
             <h3>AWS</h3>
             <p>Amazon Web Services</p>
         </div>
-        <div class="service-card" style="min-width: 180px;">
-            <div class="icon" style="background: linear-gradient(180deg, #0078d4, #005a9e);">☁️</div>
+        <div class="service-card">
+            <div class="icon partner-azure">☁️</div>
             <h3>AZURE</h3>
             <p>Microsoft Azure</p>
         </div>
-        <div class="service-card" style="min-width: 180px;">
-            <div class="icon" style="background: linear-gradient(180deg, #4285f4, #1967d2);">☁️</div>
+        <div class="service-card">
+            <div class="icon partner-gcp">☁️</div>
             <h3>GCP</h3>
             <p>Google Cloud Platform</p>
         </div>
-        <div class="service-card" style="min-width: 180px;">
-            <div class="icon" style="background: linear-gradient(180deg, #326ce5, #1a4daf);">☁️</div>
+        <div class="service-card">
+            <div class="icon partner-ovh">☁️</div>
             <h3>OVHcloud</h3>
             <p>Cloud Français</p>
         </div>

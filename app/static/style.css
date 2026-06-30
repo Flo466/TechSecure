@@ -139,26 +139,13 @@ main {
     gap: 24px;
 }
 
-.three {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.four {
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.card {
-    display: grid;
-    gap: 24px;
-}
-
 .card > a {
     display: flex;
     text-decoration: none;
     color: inherit;
 }
 
-.card > a > div,
+.card > a > *,
 .card > div {
     background: white;
     border: 1px solid var(--bordure);
@@ -168,12 +155,9 @@ main {
     overflow: hidden;
     transition: .2s;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
 }
 
-.card > a:hover > div,
+.card > a:hover > *,
 .card > div:hover {
     transform: translateY(-4px);
 }
@@ -182,25 +166,45 @@ main {
     width: 100%;
     height: 170px;
     object-fit: cover;
-    flex-shrink: 0;
+    display: block;
 }
 
-.card h3 {
+.card h3, .service-card h3 {
     text-transform: uppercase;
     color: var(--bleu-nuit);
     margin-bottom: 5px;
-    padding: 0 15px;
 }
 
-.card p {
+.card p, .service-card p {
     color: #475569;
     font-size: 14px;
-    padding: 0 15px 15px;
-    flex-grow: 1;
 }
 
 .service-card {
     padding: 28px 18px;
+}
+
+.three {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.four {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Partner cards (flex wrap) */
+.partner-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.partner-grid .service-card {
+    min-width: 180px;
+    flex: 1 1 180px;
+    max-width: 220px;
 }
 
 .icon {
@@ -249,4 +253,83 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center; /* Correction appliquée ici */
+}
+
+/* ============================
+   Service detail pages
+   ============================ */
+
+/* Hero backgrounds per service */
+.hero-cloud {
+    background: linear-gradient(90deg, rgba(6, 27, 58, .95), rgba(6, 27, 58, .55)), url('/static/IMAGE/cloud.jpg') center/cover;
+}
+
+.hero-reseau {
+    background: linear-gradient(90deg, rgba(6, 27, 58, .95), rgba(6, 27, 58, .55)), url('/static/IMAGE/reseau.jpg') center/cover;
+}
+
+.hero-ais {
+    background: linear-gradient(90deg, rgba(6, 27, 58, .95), rgba(6, 27, 58, .55)), url('/static/IMAGE/AIS.jpg') center/cover;
+}
+
+.hero-cyber {
+    background: linear-gradient(90deg, rgba(6, 27, 58, .95), rgba(6, 27, 58, .55)), url('/static/IMAGE/cyber.jpg') center/cover;
+}
+
+/* Alternating section with gray background */
+.section-alt {
+    background: var(--gris);
+    border-radius: 10px;
+    padding: 40px;
+}
+
+/* Vertical detail list for service explanations */
+.detail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.detail-item {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
+}
+
+.detail-item .icon {
+    min-width: 68px;
+    flex-shrink: 0;
+}
+
+.detail-item-text h3 {
+    margin: 0 0 5px;
+    color: var(--bleu-nuit);
+}
+
+.detail-item-text p {
+    margin: 0;
+    color: #475569;
+}
+
+/* Partner brand icon backgrounds */
+.partner-aws {
+    background: linear-gradient(180deg, #ff9900, #cc7a00) !important;
+}
+
+.partner-azure {
+    background: linear-gradient(180deg, #0078d4, #005a9e) !important;
+}
+
+.partner-gcp {
+    background: linear-gradient(180deg, #4285f4, #1967d2) !important;
+}
+
+.partner-ovh {
+    background: linear-gradient(180deg, #326ce5, #1a4daf) !important;
 }
