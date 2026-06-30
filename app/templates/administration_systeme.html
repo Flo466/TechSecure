@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Hero Spécifique Administration Système -->
+<div class="hero"
+    style="background: linear-gradient(90deg, rgba(6, 27, 58, .95), rgba(6, 27, 58, .55)), url('/static/IMAGE/AIS.jpg') center/cover;">
+    <div class="hero-text">
+        <h1>Administration Système</h1>
+        <p>Gestion complète et sécurisée de vos serveurs, bases de données et infrastructures critiques.</p>
+        <a href="{{ url_for('contact') }}" class="btn">Demander un devis</a>
+    </div>
+</div>
+
+<section class="section">
+    <h2>NOTRE EXPERTISE SYSTÈME</h2>
+    <p class="intro">Des administrateurs systèmes certifiés pour assurer la performance et la disponibilité de votre
+        infrastructure.</p>
+
+    <div class="card three">
+
+        <div class="service-card">
+            <div class="icon">🖥️</div>
+            <h3>Administration Serveurs</h3>
+            <p>Déploiement, configuration et maintenance de vos serveurs Linux et Windows (physiques et virtuels).</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">🗄️</div>
+            <h3>Gestion des Bases de Données</h3>
+            <p>Installation, optimisation et sauvegarde de vos bases MySQL, PostgreSQL et SQL Server.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">🔄</div>
+            <h3>Automatisation & Scripting</h3>
+            <p>Automatisation des tâches récurrentes avec Ansible, Bash, PowerShell pour gagner en efficacité.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section" style="background: var(--gris); border-radius: 10px; padding: 40px;">
+    <h2>NOS SERVICES SYSTÈME</h2>
+
+    <div style="display: flex; flex-direction: column; gap: 25px; max-width: 900px; margin: auto;">
+
+        <div
+            style="display: flex; gap: 20px; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
+            <div class="icon" style="min-width: 68px;">🔧</div>
+            <div>
+                <h3 style="margin: 0 0 5px; color: var(--bleu-nuit);">Déploiement & Provisionnement</h3>
+                <p style="margin: 0; color: #475569;">Mise en place d'infrastructures complètes avec des outils comme
+                    Terraform, Ansible et Docker pour un déploiement reproductible et fiable.</p>
+            </div>
+        </div>
+
+        <div
+            style="display: flex; gap: 20px; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
+            <div class="icon" style="min-width: 68px;">📦</div>
+            <div>
+                <h3 style="margin: 0 0 5px; color: var(--bleu-nuit);">Conteneurisation & Virtualisation</h3>
+                <p style="margin: 0; color: #475569;">Gestion de parcs de machines virtuelles (VMware, Proxmox) et de
+                    conteneurs (Docker, Kubernetes) pour optimiser vos ressources.</p>
+            </div>
+        </div>
+
+        <div
+            style="display: flex; gap: 20px; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
+            <div class="icon" style="min-width: 68px;">💾</div>
+            <div>
+                <h3 style="margin: 0 0 5px; color: var(--bleu-nuit);">Sauvegarde & Restauration</h3>
+                <p style="margin: 0; color: #475569;">Mise en place de stratégies de backup (règle 3-2-1), sauvegardes
+                    automatisées et tests de restauration réguliers.</p>
+            </div>
+        </div>
+
+        <div
+            style="display: flex; gap: 20px; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
+            <div class="icon" style="min-width: 68px;">📊</div>
+            <div>
+                <h3 style="margin: 0 0 5px; color: var(--bleu-nuit);">Monitoring & Performance</h3>
+                <p style="margin: 0; color: #475569;">Supervision des ressources systèmes (CPU, RAM, disque) avec
+                    alerting proactif et optimisation continue des performances.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <h2>POURQUOI NOUS CONFIER VOTRE INFRASTRUCTURE ?</h2>
+
+    <div class="card three">
+
+        <div class="service-card">
+            <div class="icon">🛡️</div>
+            <h3>Sécurité Renforcée</h3>
+            <p>Hardening des systèmes, gestion des correctifs de sécurité et conformité aux normes en vigueur.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">⏱️</div>
+            <h3>Disponibilité Garantie</h3>
+            <p>Mise en place de clusters haute disponibilité et plans de reprise d'activité pour une uptime maximale.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">📋</div>
+            <h3>Support & Assistance</h3>
+            <p>Assistance technique niveau 2/3, maintenance préventive et corrective avec engagement de délais.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="stats">
+        <div>
+            <strong>200+</strong>
+            <span>Serveurs administrés</span>
+        </div>
+        <div>
+            <strong>99.99%</strong>
+            <span>Disponibilité</span>
+        </div>
+        <div>
+            <strong>15 min</strong>
+            <span>Temps d'intervention</span>
+        </div>
+        <div>
+            <strong>ISO 20000</strong>
+            <span>Certification ITIL</span>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

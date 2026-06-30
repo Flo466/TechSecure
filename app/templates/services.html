@@ -5,8 +5,7 @@
     <h2>NOS SERVICES</h2>
     <p class="intro">Découvrez nos domaines d'expertise pour accompagner votre transformation digitale.</p>
 
-    <div class="card three">
-
+    <div class="card four">
         <a href="{{ url_for('cybersecurite') }}" style="text-decoration: none; color: inherit;">
             <div class="service-card">
                 <img src="{{ url_for('static', filename='IMAGE/cyber.jpg') }}" alt="Cybersécurité"
@@ -31,6 +30,15 @@
                     style="width: 100%; height: auto; display: block; margin-bottom: 15px;">
                 <h3>CLOUD COMPUTING</h3>
                 <p>Solutions cloud adaptées pour plus de flexibilité et de performance.</p>
+            </div>
+        </a>
+
+        <a href="{{ url_for('administration_systeme') }}" style="text-decoration: none; color: inherit;">
+            <div class="service-card">
+                <img src="{{ url_for('static', filename='IMAGE/AIS.jpg') }}" alt="Administration Système"
+                    style="width: 100%; height: auto; display: block; margin-bottom: 15px;">
+                <h3>ADMINISTRATION SYSTÈME</h3>
+                <p>Gestion et maintenance de vos serveurs et infrastructures critiques.</p>
             </div>
         </a>
     </div>
